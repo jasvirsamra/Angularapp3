@@ -1,0 +1,34 @@
+<div>
+  <label>Customer Name:</label>
+  <input [(ngModel)]="customerName" placeholder="Enter customer name" />
+</div>
+
+<div>
+  <label>Item Description:</label>
+  <input [(ngModel)]="newItem.description" placeholder="Enter item description" />
+</div>
+
+<div>
+  <label>Quantity:</label>
+  <input type="number" [(ngModel)]="newItem.quantity" />
+</div>
+
+<div>
+  <label>Price:</label>
+  <input type="number" [(ngModel)]="newItem.price" />
+</div>
+
+<button (click)="addItem()">Add Item</button>
+
+<h3>Items List</h3>
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    {{ item.description }} - {{ item.quantity }} x ${{ item.price }} = ${{ item.total }}
+    <button (click)="removeItem(i)">Remove</button>
+  </li>
+</ul>
+
+<h3>Total: ${{ totalAmount }}</h3>
+
+<button (click)="createInvoice()">Create Invoice</button>
+

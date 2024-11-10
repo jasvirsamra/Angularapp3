@@ -1,0 +1,6 @@
+<div *ngIf="invoices.length === 0">No invoices available.</div>
+<ul *ngIf="invoices.length > 0">
+  <li *ngFor="let invoice of invoices">
+    <p>{{ invoice.customerName }} - {{ invoice.date }} - Total: ${{ invoice.totalAmount }}</p>
+  </li>
+</ul>

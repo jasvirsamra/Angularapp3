@@ -1,0 +1,12 @@
+<div *ngIf="invoice">
+  <h2>Invoice Preview</h2>
+  <p><strong>Customer:</strong> {{ invoice.customerName }}</p>
+  <p><strong>Date:</strong> {{ invoice.date }}</p>
+  <h3>Items</h3>
+  <ul>
+    <li *ngFor="let item of invoice.items">
+      {{ item.description }} - {{ item.quantity }} x ${{ item.price }} = ${{ item.total }}
+    </li>
+  </ul>
+  <h3>Total: ${{ invoice.totalAmount }}</h3>
+</div>
